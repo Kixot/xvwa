@@ -1,0 +1,28 @@
+<FilesMatch "./config.ini">
+  Order Deny, Allow
+  Deny from all
+  Allow from 127.0.0.1
+</FilesMatch>
+<FilesMatch "myblog.sql">
+  Order Deny, Allow
+  Deny from all
+  Allow from 127.0.0.1
+</FilesMatch>
+<FilesMatch ".htaccess">
+  Order Deny, Allow
+  Deny from all
+  Allow from 127.0.0.1
+</FilesMatch>
+<FilesMatch "htpasswords">
+  Order Deny, Allow
+  Deny from all
+  Allow from 127.0.0.1
+</FilesMatch>
+
+<Files "phpinfo.php">
+  AuthType Basic
+  AuthName "gentil"
+  AuthBasicProvider file
+  AuthUserFile "htpasswords"
+  Require user gentil
+</Files>
